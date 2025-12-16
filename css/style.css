@@ -1,0 +1,353 @@
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f8f9ff, #98a9f3);
+  color: #1e1e2f;
+  min-height: 100vh;
+}
+
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+.hero-section{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;}
+.about-section {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.about-section h2 {
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  max-width: 720px;
+  margin: auto;
+  font-size: 16px;
+}
+
+.about-features {
+  margin-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.about-features div {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  font-weight: 600;
+}
+
+
+.social-links img {
+  width: 26px;
+  height: 26px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-links a:hover img {
+  transform: translateY(-4px) scale(1.1);
+  opacity: 0.8;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.contact-section {
+  padding: 80px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #98a9f3, #090909);
+  color: white;
+}
+
+.contact-box {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-box div {
+  background: rgba(255,255,255,0.15);
+  padding: 16px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+/* =====================
+   COMMON
+===================== */
+.pad {
+  padding: 40px;
+}
+
+h1, h2 {
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #6a5cff, #8f7bff);
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(106,92,255,0.35);
+}
+
+/* =====================
+   MARQUEE
+===================== */
+.marquee-bar {
+  background: #6a5cff;
+  color: white;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.marquee-content {
+  white-space: nowrap;
+  animation: marquee 18s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #6a5cff;
+}
+
+.navbar nav a {
+  margin-left: 25px;
+  font-weight: 600;
+  position: relative;
+}
+
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #6a5cff;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover::after {
+  width: 100%;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  background: linear-gradient(135deg, #6a5cff, #a48bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 20px 0 30px;
+}
+
+.cta {
+  font-size: 16px;
+}
+
+/* =====================
+   PRODUCTS
+===================== */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  padding: 60px 40px;
+}
+
+.product {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(106,92,255,0.25);
+}
+
+.product img {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+.product h3 {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.product span {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #6a5cff;
+}
+
+/* =====================
+   PRODUCT CUSTOMIZE
+===================== */
+.product-form {
+  max-width: 520px;
+  margin: auto;
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+}
+
+.product-preview-box {
+  height: 160px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.color-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  cursor: pointer;
+}
+
+.color-swatch.active {
+  border: 3px solid #6a5cff;
+}
+
+/* =====================
+   FORMS
+===================== */
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* =====================
+   SUCCESS PAGE
+===================== */
+.success-message {
+  text-align: center;
+}
+ .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+
+.success-message h1 {
+  color: #6a5cff;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+  text-align: center;
+  padding: 25px;
+  background: #1e1e2f;
+  color: #ccc;
+  margin-top: 60px;
+}
+
+/* =====================
+   LEAVES / SNOW
+===================== */
+.leaves span {
+  position: fixed;
+  top: -10px;
+  animation: fall linear infinite;
+  opacity: 0.6;
+}
+
+.leaves span:nth-child(1) { left: 10%; animation-duration: 12s; }
+.leaves span:nth-child(2) { left: 30%; animation-duration: 15s; }
+.leaves span:nth-child(3) { left: 50%; animation-duration: 18s; }
+.leaves span:nth-child(4) { left: 70%; animation-duration: 14s; }
+.leaves span:nth-child(5) { left: 90%; animation-duration: 16s; }
+
+@keyframes fall {
+  from { transform: translateY(-10vh); }
+  to { transform: translateY(110vh); }
+}

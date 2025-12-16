@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Customize Product – Pitas</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="pad">
+
+<div class="product-form">
+    <h2>Customize Your Product</h2>
+
+    <div class="color-selector">
+        <label>Select Base Product Color:</label>
+        <div id="color-options" style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button class="color-swatch active" data-color="#FFFFFF" style="background-color: #FFFFFF;" onclick="updateProductColor(this, '#FFFFFF')"></button>
+            <button class="color-swatch" data-color="#F00000" style="background-color: #F00000;" onclick="updateProductColor(this, '#F00000')"></button>
+            <button class="color-swatch" data-color="#0000FF" style="background-color: #0000FF;" onclick="updateProductColor(this, '#0000FF')"></button>
+            <button class="color-swatch" data-color="#191919" style="background-color: #191919;" onclick="updateProductColor(this, '#191919')"></button>
+        </div>
+    </div>
+    
+    <div id="product-preview" class="product-preview-box">
+        T-Shirt Preview: White (Default)
+    </div>
+
+    <label for="logo-upload">Upload Logo</label>
+    <input type="file" id="logo-upload">
+
+    <label for="custom-text">Custom Text</label>
+    <input type="text" id="custom-text" placeholder="Your brand text">
+
+    <button class="btn">Add to Cart</button>
+</div>
+
+<script>
+    // JS function to change the background color and update the active swatch
+    function updateProductColor(selectedButton, color) {
+        // 1. Update the product preview
+        const preview = document.getElementById('product-preview');
+        preview.style.backgroundColor = color;
+        preview.innerText = `T-Shirt Preview: ${color}`; // Text feedback
+
+        // 2. Remove 'active' class from all swatches
+        const swatches = document.querySelectorAll('.color-swatch');
+        swatches.forEach(swatch => swatch.classList.remove('active'));
+
+        // 3. Add 'active' class to the clicked button
+        selectedButton.classList.add('active');
+    }
+
+    // Set initial state
+    document.addEventListener('DOMContentLoaded', () => {
+        const defaultColor = '#FFFFFF';
+        document.getElementById('product-preview').style.backgroundColor = defaultColor;
+    });
+</script>
+
+</body>
+</html>
